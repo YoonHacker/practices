@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Grid: Media Queries</title>
+</head>
+<style>
+    .container {
+        display: grid;
+        grid-gap: 1rem;
+        grid-template-areas: 'navbar navbar navbar navbar' 'section section section aside' 'footer footer footer footer';
+    }
+    
+    @media (max-width:300px) {
+        body {
+            background-color: red;
+        }
+        .container {
+            grid-template-areas: 'navbar navbar navbar navbar' 'section section section section''aside aside aside aside' 'footer footer footer footer';
+        }
+        aside {
+            display: none;
+        }
+        span {
+            display: block;
+            text-align: center;
+        }
+    }
+    
+    @media( min-width:300px)and (max-width:500px) {
+        body {
+            background-color: blue;
+        }
+        .container {
+            grid-template-areas: 'navbar navbar navbar navbar' 'section section section section''aside aside aside aside' 'footer footer footer footer';
+        }
+        aside {
+            display: none;
+        }
+        span {
+            display: block;
+            text-align: center;
+        }
+    }
+    
+    @media( min-width:500px)and (max-width:800px) {
+        body {
+            background-color: yellow;
+        }
+        .container {
+            grid-template-areas: 'navbar navbar navbar navbar' 'section section section section''aside aside aside aside' 'footer footer footer footer';
+        }
+        span {
+            display: block;
+            text-align: center;
+        }
+    }
+    
+    @media( min-width:800px) {
+        body {
+            background-color: green;
+        }
+    }
+    
+    .bdr {
+        border: 2px solid black;
+        padding: 10px 23px;
+        background-color: wheat;
+    }
+    
+    nav {
+        grid-area: navbar;
+    }
+    
+    section {
+        grid-area: section;
+    }
+    
+    aside {
+        grid-area: aside;
+    }
+    
+    footer {
+        grid-area: footer;
+        text-align: center;
+    }
+</style>
+
+<body>
+    <div class="container">
+        <nav class="bdr">
+            <span>Home</span>
+            <span>Service</span>
+            <span>About Us</span>
+            <span>Contact</span>
+        </nav>
+        <section class="bdr">
+            <h1>Learn CSS in hindi</h1>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. In dignissimos aperiam praesentium inventore molestiae molestias minus aliquam assumenda non natus amet sed sequi, cupiditate ut rem aliquid dolor explicabo enim delectus excepturi!
+                Ad, maiores illum. Ut debitis quos pariatur veritatis quod cupiditate error, modi nulla minima, soluta, adipisci maxime eaque quaerat temporibus. Voluptatum aliquid voluptate nihil delectus tempora ducimus culpa perspiciatis explicabo!
+                Molestias debitis excepturi in id dolore ipsam, omnis nam accusamus voluptates aliquid minima quo temporibus necessitatibus voluptate voluptatibus, iure explicabo placeat officiis veritatis facere eius velit cumque dolorem quibusdam? Voluptate
+                ea iure eligendi perferendis iusto in ab? Illum nisi perferendis mollitia eveniet excepturi eum dolorum incidunt magnam adipisci consequuntur, molestiae sit vero odit obcaecati beatae. Vitae veniam totam corrupti ipsam quaerat, quos dignissimos,
+                amet quasi omnis hic enim id voluptatem non! Atque, sapiente blanditiis. Debitis expedita quaerat inventore, fugit facere sint est officia neque fuga mollitia amet labore, adipisci, minima quas quos quod reiciendis.</p>
+        </section>
+        <aside class="bdr">
+            <h1>
+                More about us
+            </h1>
+        </aside>
+    </div>
+    <footer class="bdr">Copyrigth Vivek's Website</footer>
+</body>
+
+</html>

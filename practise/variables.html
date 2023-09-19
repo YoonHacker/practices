@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Variables / Custom Properties</title>
+    <style>
+        /* this is are variables and value */
+        /* we can make universal variables or individual variable for every elemant */
+        
+         :root {
+            /* primary color is the variable and blue is the value of the variable here */
+            --primary-color: blue;
+            --secondary-color: violet;
+            --maxw: 733px;
+        }
+        
+        .box {
+            /* --box-color: blue; */
+            width: 200px;
+            height: 200px;
+            text-align: center;
+            background-color: var(--primary-color);
+            box-shadow: 3px 3px var(--primary-color);
+            border: 2px solid rgb(255, 0, 0);
+            margin: 2px 9px;
+        }
+        
+        .container {
+            max-width: var(--maxw);
+            /* --maxw is the variable and should be written in the same way */
+            /* max-width: var(--maxw); */
+            margin: auto;
+            /* --container-color: violet; */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: var(--secondary-color);
+            /* background-color: var(--container-color); */
+            /* background-color: var(--box-color); */
+            /* here it will not work because the variable is not defined. 
+            But after I define the variable it will again work.*/
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="box">Click Me</div>
+        <div class="box">Click Me</div>
+        <div class="box">Click Me</div>
+    </div>
+</body>
+
+</html>
